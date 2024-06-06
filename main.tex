@@ -1,0 +1,217 @@
+\documentclass[12pt, twoside]{report_bachelorarbeit}
+
+\usepackage[utf8]{inputenc}
+%\input{chapters/Illustrations_preamble}
+%\usepackage{pdfpages}
+
+% Images
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage[center]{caption} %for captions
+\captionsetup{font=small,skip=0pt}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.17}
+%\usepackage{tikz} % for generating drawings for NN visualization
+%\usetikzlibrary{positioning,shapes,arrows}
+
+%\usepackage{adjustbox} %rotate environemnts like figures or tables
+%\usepackage{makecell} %line break in tables
+%\usepackage{pgf}
+
+
+% Visualizing Algorithms
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+
+% PaperLayout
+\usepackage[a4paper, margin=25mm]{geometry}
+
+% For Titlepage
+\usepackage{subcaption}
+\usepackage{caption}
+
+% Font
+\usepackage{newtxtext,newtxmath}
+\usepackage{setspace}
+\usepackage[absolute]{textpos} % needed for titlepage
+
+%% Header/Footer
+\usepackage{lastpage} 
+\usepackage{fancyhdr} %Fooder und Header Style
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead{}
+	\fancyhead[RO,LE]{\centering Computer Vision Seminar: Surgical-Dino}
+	\fancyfoot{}
+	\fancyfoot[LE,RO]{\thepage}
+	%\fancyfoot[LO,CE]{Chapter \thechapter}
+	%\fancyfoot[LO,CE]{\ifnum\value{chapter}>0Chapter \thechapter\fi}
+	\fancyfoot[CO,RE]{Tilman Seeßelberg}
+	\renewcommand{\headrulewidth}{0.4pt}% Line at the header invisible
+	\renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhead{}
+\fancyhead[RO,LE]{\centering \centering Computer Vision Seminar: Surgical-Dino}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+%\fancyfoot[LO,CE]{\ifnum\value{chapter}>0\thechapter\fi} 
+\fancyfoot[CO,RE]{Tilman Seeßelberg}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+	%bookmarks=true,                     % show bookmarks bar
+	unicode=false,                      % non - Latin characters in Acrobat’s bookmarks
+	pdftoolbar=false,                        % show Acrobat’s toolbar
+	pdfmenubar=false,                        % show Acrobat’s menu
+	pdffitwindow=false,                 % window fit to page when opened
+	pdfstartview={FitH},                    % fits the width of the page to the window
+	pdftitle={\centering Computer Vision Seminar: Surgical-Dino},% title
+	pdfauthor={Tilman Seeßelberg},                 % author
+	pdfsubject={Computer Vision Seminar},                   % subject of the document
+	pdfcreator={Tilman Seeßelberg},                   % creator of the document
+	pdfproducer={Tilman Seeßelberg},             % producer of the document
+	pdfkeywords={NDT, thesis, cfrp, opencv},   % list of keywords
+	pdfnewwindow=true,                  % links in new window
+	colorlinks=true,                        % false: boxed links; true: colored links
+	linkcolor=blue,                          % color of internal links
+	linkbordercolor= {0 0 1},
+	filecolor=blue,                     % color of file links
+	citecolor=blue,                     % color of file links
+	urlcolor=blue,                        % color of external links
+	menubordercolor= {1 0 0}	
+} 
+%\providecommand*\algorithmautorefname{Algorithm} %autoref fix to print Algorithm X when ref-ing
+%\def\subsectionautorefname{Subsection}
+%\def\sectionautorefname{Section}
+
+%Language
+\usepackage[USenglish,american]{babel}
+
+%Literaturverzeichniss
+\usepackage[style=ieee, backend=biber, dashed=false, doi=true, isbn=true, url=true, eprint=false]{biblatex} 
+\addbibresource{./sources.bib}
+%\setcounter{biburllcpenalty}{7000} %Line Break for long URLs in bibliography
+%\setcounter{biburlucpenalty}{8000} % Line Break for long URLs in bibliography
+\usepackage{csquotes} % needed to display quotes according to language
+
+% Acronyms
+\usepackage[nohyperlinks]{acronym}
+
+% Mathematics packages
+\usepackage{siunitx}
+
+% List environment
+\usepackage{enumitem}
+
+% suppressing errormassages
+\hbadness = 10000
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+%Defining new format commands
+\newcommand{\tecterm}[1]{\emph{#1}}
+
+%Syntax Highlighting
+%\usepackage{minted}
+\usepackage{listings} % include code from file in appendix
+\usepackage{xcolor} % for color in code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+%End Plugins
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\pagestyle{plain}
+\input{chapters/title}
+\pagenumbering{roman}
+\section*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{chapters/00_abstract}
+\newpage
+\section*{Kurzzusammenfassung}
+\addcontentsline{toc}{chapter}{Kurzzusammenfassung}
+\input{chapters/00_kurzzusammenfassung}
+\newpage
+%\subsection*{Preamble}
+%\addcontentsline{toc}{chapter}{Preamble}
+%\input{chapters/preamble}
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% create acronyms
+\chapter*{List of abbreviations}
+\begin{acronym}
+\acro{mlp}[MLP]{Multi Layer Perceptron}
+\end{acronym}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhead{}
+\fancyhead[RO,LE]{\centering Computer Vision Seminar: Surgical-Dino}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+%\fancyfoot[LO,CE]{\ifnum\value{chapter}>0\thechapter\fi} 
+\fancyfoot[CO,RE]{Tilman Seeßelberg}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{chapters/01_introduction}
+\chapter{Theoretical Foundations}
+\input{chapters/02_background}
+\chapter{Unearthing Surgical-Dino}
+\input{chapters/03_surgicaldino}
+\chapter{Discussion}
+\input{chapters/04_discussion}
+\chapter{Future Work}
+\input{chapters/05_future_work}
+\chapter{Conclusion}
+\input{chapters/06_conclusion}
+\appendix
+
+\chapter{Code Tools}
+\label{app:codetools}
+\addcontentsline{toc}{chapter}{Bibliography}
+\clearpage
+\pagestyle{plain}
+\printbibliography
+
+\newpage
+%\input{chapters/eidesstattlicherErklärung}
+\end{document}
