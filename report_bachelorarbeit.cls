@@ -120,7 +120,9 @@
 \setlength\lineskip{1\p@}
 \setlength\normallineskip{1\p@}
 \renewcommand\baselinestretch{}
-\setlength\parskip{0\p@ \@plus \p@}
+%%%% Set Paragraph Spacing here:
+\setlength\parskip{5pt \@plus \p@}
+% \setlength\parskip{0\p@ \@plus \p@}
 \@lowpenalty   51
 \@medpenalty  151
 \@highpenalty 301

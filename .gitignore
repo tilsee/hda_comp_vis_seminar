@@ -19,6 +19,8 @@
 *-blx.aux
 *-blx.bib
 *.run.xml
+*.bib.sav.tmp
+*.bib.bak
 
 ## Build tool auxiliary files:
 *.fdb_latexmk
@@ -29,3 +31,5 @@
 *.pdfsync
 *.rubbercache
 rubber.cache
+.vscode/
+svg-inkscape/

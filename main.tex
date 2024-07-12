@@ -6,13 +6,19 @@
 
 % Images
 \usepackage{graphicx}
+\usepackage{svg}
 \graphicspath{{images/}}
 \usepackage[center]{caption} %for captions
 \captionsetup{font=small,skip=0pt}
 %\usepackage{pgfplots}
 %\pgfplotsset{compat=1.17}
-%\usepackage{tikz} % for generating drawings for NN visualization
-%\usetikzlibrary{positioning,shapes,arrows}
+\usepackage{tikz} % for generating drawings for NN visualization
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{positioning, shapes.multipart, arrows.meta, calc}
+
 
 %\usepackage{adjustbox} %rotate environemnts like figures or tables
 %\usepackage{makecell} %line break in tables
@@ -199,8 +205,6 @@
 \input{chapters/03_surgicaldino}
 \chapter{Discussion}
 \input{chapters/04_discussion}
-\chapter{Future Work}
-\input{chapters/05_future_work}
 \chapter{Conclusion}
 \input{chapters/06_conclusion}
 \appendix

@@ -4,9 +4,10 @@
   title     = {Attention Is All You Need},
   doi       = {10.48550/ARXIV.1706.03762},
   copyright = {arXiv.org perpetual, non-exclusive license},
-  keywords  = {Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  keywords  = {Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences},
   publisher = {arXiv},
 }
+
 @Book{Geron2022,
   author    = {Géron, Aurélien},
   date      = {2022},
@@ -14,6 +15,225 @@
   isbn      = {9781098125974},
   publisher = {O'Reilly Media, Incorporated},
   subtitle  = {Concepts, Tools, and Techniques to Build Intelligent Systems},
+}
+
+@Misc{Dosovitskiy2020,
+  author    = {Dosovitskiy, Alexey and Beyer, Lucas and Kolesnikov, Alexander and Weissenborn, Dirk and Zhai, Xiaohua and Unterthiner, Thomas and Dehghani, Mostafa and Minderer, Matthias and Heigold, Georg and Gelly, Sylvain and Uszkoreit, Jakob and Houlsby, Neil},
+  date      = {2020},
+  title     = {An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale},
+  doi       = {10.48550/ARXIV.2010.11929},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Computer Vision and Pattern Recognition (cs.CV), Artificial Intelligence (cs.AI), Machine Learning (cs.LG), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@Misc{Bahdanau2014,
+  author    = {Bahdanau, Dzmitry and Cho, Kyunghyun and Bengio, Yoshua},
+  date      = {2014},
+  title     = {Neural Machine Translation by Jointly Learning to Align and Translate},
+  doi       = {10.48550/ARXIV.1409.0473},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Computation and Language (cs.CL), Machine Learning (cs.LG), Neural and Evolutionary Computing (cs.NE), Machine Learning (stat.ML), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@Misc{Luong2015,
+  author    = {Luong, Minh-Thang and Pham, Hieu and Manning, Christopher D.},
+  date      = {2015},
+  title     = {Effective Approaches to Attention-based Neural Machine Translation},
+  doi       = {10.48550/ARXIV.1508.04025},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Computation and Language (cs.CL), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@InProceedings{Xu2015,
+  author    = {Xu, Kelvin and Ba, Jimmy and Kiros, Ryan and Cho, Kyunghyun and Courville, Aaron and Salakhudinov, Ruslan and Zemel, Rich and Bengio, Yoshua},
+  booktitle = {Proceedings of the 32nd International Conference on Machine Learning},
+  title     = {Show, Attend and Tell: Neural Image Caption Generation with Visual Attention},
+  editor    = {Bach, Francis and Blei, David},
+  pages     = {2048--2057},
+  publisher = {PMLR},
+  series    = {Proceedings of Machine Learning Research},
+  url       = {https://proceedings.mlr.press/v37/xuc15.html},
+  volume    = {37},
+  abstract  = {Inspired by recent work in machine translation and object detection, we introduce an attention based model that automatically learns to describe the content of images. We describe how we can train this model in a deterministic manner using standard backpropagation techniques and stochastically by maximizing a variational lower bound. We also show through visualization how the model is able to automatically learn to fix its gaze on salient objects while generating the corresponding words in the output sequence. We validate the use of attention with state-of-the-art performance on three benchmark datasets: Flickr8k, Flickr30k and MS COCO.},
+  address   = {Lille, France},
+  month     = {7},
+  pdf       = {http://proceedings.mlr.press/v37/xuc15.pdf},
+  year      = {2015},
+}
+
+@Misc{Hu2021,
+  author    = {Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  date      = {2021},
+  title     = {LoRA: Low-Rank Adaptation of Large Language Models},
+  doi       = {10.48550/ARXIV.2106.09685},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Computation and Language (cs.CL), Artificial Intelligence (cs.AI), Machine Learning (cs.LG), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@InProceedings{Caron2021,
+  author    = {Caron, Mathilde and Touvron, Hugo and Misra, Ishan and J\'egou, Herv\'e and Mairal, Julien and Bojanowski, Piotr and Joulin, Armand},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  title     = {Emerging Properties in Self-Supervised Vision Transformers},
+  pages     = {9650-9660},
+  month     = {10},
+  year      = {2021},
+}
+
+@InProceedings{Phuong2019,
+  author    = {Phuong, Mary and Lampert, Christoph},
+  booktitle = {Proceedings of the 36th International Conference on Machine Learning},
+  title     = {Towards Understanding Knowledge Distillation},
+  editor    = {Chaudhuri, Kamalika and Salakhutdinov, Ruslan},
+  pages     = {5142--5151},
+  publisher = {PMLR},
+  series    = {Proceedings of Machine Learning Research},
+  url       = {https://proceedings.mlr.press/v97/phuong19a.html},
+  volume    = {97},
+  abstract  = {Knowledge distillation, i.e., one classifier being trained on the outputs of another classifier, is an empirically very successful technique for knowledge transfer between classifiers. It has even been observed that classifiers learn much faster and more reliably if trained with the outputs of another classifier as soft labels, instead of from ground truth data. So far, however, there is no satisfactory theoretical explanation of this phenomenon. In this work, we provide the first insights into the working mechanisms of distillation by studying the special case of linear and deep linear classifiers. Specifically, we prove a generalization bound that establishes fast convergence of the expected risk of a distillation-trained linear classifier. From the bound and its proof we extract three key factors that determine the success of distillation: * data geometry – geometric properties of the data distribution, in particular class separation, has a direct influence on the convergence speed of the risk; * optimization bias – gradient descent optimization finds a very favorable minimum of the distillation objective; and * strong monotonicity – the expected risk of the student classifier always decreases when the size of the training set grows.},
+  month     = {7},
+  pdf       = {http://proceedings.mlr.press/v97/phuong19a/phuong19a.pdf},
+  year      = {2019},
+}
+
+@Misc{Salehinejad2018,
+  author    = {Salehinejad, Hojjat and Sankar, Sharan and Barfett, Joseph and Colak, Errol and Valaee, Shahrokh},
+  date      = {2018},
+  title     = {Recent Advances in Recurrent Neural Networks},
+  doi       = {10.48550/ARXIV.1801.01078},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Neural and Evolutionary Computing (cs.NE), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+ 
+@Article{Hochreiter1997,
+  author       = {Hochreiter, Sepp and Schmidhuber, Jürgen},
+  date         = {1997-11},
+  journaltitle = {Neural Computation},
+  title        = {Long Short-Term Memory},
+  doi          = {10.1162/neco.1997.9.8.1735},
+  issn         = {1530-888X},
+  number       = {8},
+  pages        = {1735--1780},
+  volume       = {9},
+  publisher    = {MIT Press},
+}
+
+@Misc{Zhou2023,
+  author    = {Zhou, Ce and Li, Qian and Li, Chen and Yu, Jun and Liu, Yixin and Wang, Guangjing and Zhang, Kai and Ji, Cheng and Yan, Qiben and He, Lifang and Peng, Hao and Li, Jianxin and Wu, Jia and Liu, Ziwei and Xie, Pengtao and Xiong, Caiming and Pei, Jian and Yu, Philip S. and Sun, Lichao},
+  date      = {2023},
+  title     = {A Comprehensive Survey on Pretrained Foundation Models: A History from BERT to ChatGPT},
+  doi       = {10.48550/ARXIV.2302.09419},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Artificial Intelligence (cs.AI), Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@Misc{Bommasani2021,
+  author    = {Bommasani, Rishi and Hudson, Drew A. and Adeli, Ehsan and Altman, Russ and Arora, Simran and von Arx, Sydney and Bernstein, Michael S. and Bohg, Jeannette and Bosselut, Antoine and Brunskill, Emma and Brynjolfsson, Erik and Buch, Shyamal and Card, Dallas and Castellon, Rodrigo and Chatterji, Niladri and Chen, Annie and Creel, Kathleen and Davis, Jared Quincy and Demszky, Dora and Donahue, Chris and Doumbouya, Moussa and Durmus, Esin and Ermon, Stefano and Etchemendy, John and Ethayarajh, Kawin and Fei-Fei, Li and Finn, Chelsea and Gale, Trevor and Gillespie, Lauren and Goel, Karan and Goodman, Noah and Grossman, Shelby and Guha, Neel and Hashimoto, Tatsunori and Henderson, Peter and Hewitt, John and Ho, Daniel E. and Hong, Jenny and Hsu, Kyle and Huang, Jing and Icard, Thomas and Jain, Saahil and Jurafsky, Dan and Kalluri, Pratyusha and Karamcheti, Siddharth and Keeling, Geoff and Khani, Fereshte and Khattab, Omar and Koh, Pang Wei and Krass, Mark and Krishna, Ranjay and Kuditipudi, Rohith and Kumar, Ananya and Ladhak, Faisal and Lee, Mina and Lee, Tony and Leskovec, Jure and Levent, Isabelle and Li, Xiang Lisa and Li, Xuechen and Ma, Tengyu and Malik, Ali and Manning, Christopher D. and Mirchandani, Suvir and Mitchell, Eric and Munyikwa, Zanele and Nair, Suraj and Narayan, Avanika and Narayanan, Deepak and Newman, Ben and Nie, Allen and Niebles, Juan Carlos and Nilforoshan, Hamed and Nyarko, Julian and Ogut, Giray and Orr, Laurel and Papadimitriou, Isabel and Park, Joon Sung and Piech, Chris and Portelance, Eva and Potts, Christopher and Raghunathan, Aditi and Reich, Rob and Ren, Hongyu and Rong, Frieda and Roohani, Yusuf and Ruiz, Camilo and Ryan, Jack and Ré, Christopher and Sadigh, Dorsa and Sagawa, Shiori and Santhanam, Keshav and Shih, Andy and Srinivasan, Krishnan and Tamkin, Alex and Taori, Rohan and Thomas, Armin W. and Tramèr, Florian and Wang, Rose E. and Wang, William and Wu, Bohan and Wu, Jiajun and Wu, Yuhuai and Xie, Sang Michael and Yasunaga, Michihiro and You, Jiaxuan and Zaharia, Matei and Zhang, Michael and Zhang, Tianyi and Zhang, Xikun and Zhang, Yuhui and Zheng, Lucia and Zhou, Kaitlyn and Liang, Percy},
+  date      = {2021},
+  title     = {On the Opportunities and Risks of Foundation Models},
+  doi       = {10.48550/ARXIV.2108.07258},
+  copyright = {Creative Commons Attribution 4.0 International},
+  keywords  = {Machine Learning (cs.LG), Artificial Intelligence (cs.AI), Computers and Society (cs.CY), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@InProceedings{Yuan2022,
+  author    = {Yuan, Binhang and He, Yongjun and Davis, Jared and Zhang, Tianyi and Dao, Tri and Chen, Beidi and Liang, Percy S and R\'{e}, Christopher and Zhang, Ce},
+  booktitle = {Advances in Neural Information Processing Systems},
+  title     = {Decentralized Training of Foundation Models in Heterogeneous Environments},
+  editor    = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},
+  pages     = {25464--25477},
+  publisher = {Curran Associates, Inc.},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2022/file/a37d615b61f999a5fa276adb14643476-Paper-Conference.pdf},
+  volume    = {35},
+  year      = {2022},
+}
+
+@Misc{Yuan2021,
+  author    = {Yuan, Lu and Chen, Dongdong and Chen, Yi-Ling and Codella, Noel and Dai, Xiyang and Gao, Jianfeng and Hu, Houdong and Huang, Xuedong and Li, Boxin and Li, Chunyuan and Liu, Ce and Liu, Mengchen and Liu, Zicheng and Lu, Yumao and Shi, Yu and Wang, Lijuan and Wang, Jianfeng and Xiao, Bin and Xiao, Zhen and Yang, Jianwei and Zeng, Michael and Zhou, Luowei and Zhang, Pengchuan},
+  date      = {2021},
+  title     = {Florence: A New Foundation Model for Computer Vision},
+  doi       = {10.48550/ARXIV.2111.11432},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Computer Vision and Pattern Recognition (cs.CV), Artificial Intelligence (cs.AI), Machine Learning (cs.LG), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@Misc{Aghajanyan2020,
+  author    = {Aghajanyan, Armen and Zettlemoyer, Luke and Gupta, Sonal},
+  date      = {2020},
+  title     = {Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning},
+  doi       = {10.48550/ARXIV.2012.13255},
+  copyright = {Creative Commons Attribution 4.0 International},
+  keywords  = {Machine Learning (cs.LG), Computation and Language (cs.CL), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+@Misc{Devlin2018,
+  author    = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  date      = {2018},
+  title     = {BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  doi       = {10.48550/ARXIV.1810.04805},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords  = {Computation and Language (cs.CL), FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+
+ 
+@Article{Mauricio2023,
+  author       = {Maurício, José and Domingues, Inês and Bernardino, Jorge},
+  date         = {2023-04},
+  journaltitle = {Applied Sciences},
+  title        = {Comparing Vision Transformers and Convolutional Neural Networks for Image Classification: A Literature Review},
+  doi          = {10.3390/app13095521},
+  issn         = {2076-3417},
+  number       = {9},
+  pages        = {5521},
+  volume       = {13},
+  publisher    = {MDPI AG},
+}
+
+ 
+@Article{Jamil2023,
+  author       = {Jamil, Sonain and Jalil Piran, Md. and Kwon, Oh-Jin},
+  date         = {2023-04},
+  journaltitle = {Drones},
+  title        = {A Comprehensive Survey of Transformers for Computer Vision},
+  doi          = {10.3390/drones7050287},
+  issn         = {2504-446X},
+  number       = {5},
+  pages        = {287},
+  volume       = {7},
+  publisher    = {MDPI AG},
+}
+
+ 
+@Article{Han2023,
+  author       = {Han, Kai and Wang, Yunhe and Chen, Hanting and Chen, Xinghao and Guo, Jianyuan and Liu, Zhenhua and Tang, Yehui and Xiao, An and Xu, Chunjing and Xu, Yixing and Yang, Zhaohui and Zhang, Yiman and Tao, Dacheng},
+  date         = {2023-01},
+  journaltitle = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  title        = {A Survey on Vision Transformer},
+  doi          = {10.1109/tpami.2022.3152247},
+  issn         = {1939-3539},
+  number       = {1},
+  pages        = {87--110},
+  volume       = {45},
+  publisher    = {Institute of Electrical and Electronics Engineers (IEEE)},
+}
+
+@InProceedings{Ranftl2021,
+  author    = {Ranftl, Ren\'e and Bochkovskiy, Alexey and Koltun, Vladlen},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  title     = {Vision Transformers for Dense Prediction},
+  pages     = {12179-12188},
+  month     = {October},
+  year      = {2021},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
