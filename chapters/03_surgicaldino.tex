@@ -1,1 +1,21 @@
-\section{Improvements of Surgical-Dino}
+\section{Surgical-Dino}
+\TS{Information about the motivation of Dino}
+Surgical Dino as introduced by Cui et al.~\cite{Cui2024} adapts the DinoV2 architecture as introduced in Section~\ref{sec:dino} to the task of monocular depth estimation to use for endoscopy.
+Endoscopy is a medical procedure where a camera is inserted into the body to visualize the interior of organs or cavities for diagnostic or surgical purposes.
+While there are endoscopy instruments available using stereo cameras for depth estimation, these are often bulky and expensive. 
+Hence the desire to create appropriate depth estimations using only a singel, monocular camera using ML.
+DinoV2 was choosen as starting point as it was the most recent foundation model and already achieved promising results in several computer vision tasks including depth estimation.
+
+\TS{Information about the motivation of the authors}
+To do this the authors develope a pipeline to adapt the smallest pretrained DinoV2 Encoder \emph{DINOv2-S} with 12 Transformer Blocks and each multi-head attention heaving 6 hedas,  and train a new depth prediction head to transfer the Transformer outputs to a depth map.
+The Surgical-Dino Model uses this \emph{DINOv2-S} model, freezes its weighst and adds LORA matrices to the Attention Heads and adds a untrained linear layer following the Encoder to predict the depth map.
+Instead of fine tuning the model by updating all weights the authors applied the sugested method LORA as introduced in Section~\ref{sec:model-fine-tuning} as it reduces the number of parameters to be trained significantly.
+
+\TS{Results of the Paper}
+
+The first step for creating Surgical-DINO is to fine-tune the DinoV2 Encoder following the DinoV2 pre-training procedure except with the encoder weights frozen
+
+\textbf{Related Works}
+
+\textbf{Reasoning of the authors for how they derive at the fine-tuning regiment as they do}
+

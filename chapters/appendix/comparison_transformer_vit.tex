@@ -1,0 +1,15 @@
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{3cm}|p{5.5cm}|p{5.5cm}|}
+    \hline
+    \textbf{Component} & \textbf{Transformers} & \textbf{Vision Transformers (ViTs)} \\ \hline
+    Embedding & Devides input sequence (e.g., a sentence) into tokens (e.g., syllables) and converts them into continuous vector representations, forming the embedding matrix. & Devides the input image into non-overlapping patches of size $16 \times 16$. Each patch is flattened and used as an embedding vector. All embedding vectors together form the embedding matrix.\\ \hline
+    Position Encoding & Uses fixed 1-d sinusoidal positional encodings to encode the position of each token in the sequence.& Uses learnable position embeddings to better capture the spatial relationships between image patches.\\ \hline
+    Encoder & \multicolumn{2}{p{11cm}|}{Consists of a stack of identical layers, each with a multi-head self-attention mechanism and a position-wise MLP.}\\ \hline
+    Decoder & Consists of a stack of identical layers, each with a multi-head self-attention mechanism and an multi-head cross attention connecting the output of the encoder with the decoder. The cross attention is followed by a position-wise MLP. & Not applicable, as ViTs only use an encoder.\\ \hline
+    Attention Mechanism & \multicolumn{2}{p{11cm}|}{Computes attention scores using query (Q), key (K), and value~(V) matrices. Multi-head attention allows the model to attend to different parts of the input sequence simultaneously.}\\ \hline
+    Class Token & Not applicable. & Prepends a special class token to the embedding matrix which the prediction head uses for classification\\ \hline
+    \end{tabular}
+    \caption[Comparison of ViT and Transformer Architecture]{Comparison of Components in the original Transformers by Vaswani et al.~\cite{Vaswani2017} and the original ViT by Dosovitskiy et al.~\cite{Dosovitskiy2020}, detailing key adaptations such as the use of image patches instead of textual tokens and positional embeddings tailored for spatial data, which allow ViTs to effectively handle visual contexts.}
+\end{table}

@@ -1,0 +1,23 @@
+% This report will dive into the findings of the paper \emph{Surgical-DINO: adapter learning of foundation models for depth estimation in endoscopic surgery} by Cui et al.~\cite{Cui2024}.
+% The paper introduces a fine tuning regiment for a computer vision foundation model called DINOv2 created by Oquab et al.~\cite{Oquab2023} for the task of Monocular Depth Estimation (MDE) in endoscopy using comparably small dataset of $17607$ frames including a corresponding ground truth depth map.
+% This work illustrates the potential of foundation models to accelerate the development of new state of the art models even in domains with limited data availability.
+% Foundation models gain more and more tracktion in the field of computer vision as a lot of effort is put into developing unsupervised pretraining tasks for large scale models such as Vision Transformers (ViTs) or other architectures like Convolutional Neural Networks (CNNs).
+% Foundation models at the moment seem to be very promising of being the new standard of machine learning models in the field of computer vision, where one would not start from training a network from scratch but rather use a pretrained model and only fine-tune it as it potentionally provides way better results while consuming a lot less computational ressources due to the benefits of the model already having learned meaningful patterns for the data it was trained on.
+% An additional advantage is, that it is also possible to achieve good results only using very few labeled data to fine-tune a foundation model.
+% Therefor this is also very promissing in the field of medicine, where there are many very expensive prodecures for creating MRI images or similar, or also in endoscopy, where depth maps are needed in order to percicly move the endoscope inside the patient.
+
+\TS{Rewrite and get to the topic (Surgical Dino) quicker}
+Foundation models are gaining significant traction in the field of computer vision, driven by extensive research in unsupervised pretraining tasks for large-scale models such as Vision Transformers (ViTs) and Convolutional Neural Networks (CNNs). 
+These models promise to become the new standard in machine learning for computer vision, offering substantial advantages over training networks from scratch. 
+By leveraging pretrained models and fine-tuning them, researchers can achieve impressive results, often surpassing previous state-of-the-art performance while reducing computational resources and the need of large labled datasets, due to the foundation models already having learned meaningful representations of the input data.
+This is particularly advantageous in the medical field. 
+In disciplines like endoscopy, where creating labeled datasets is expensive and time-consuming, foundation models offer a promising solution.
+For instance, in endoscopy, accurate depth maps are crucial for precisely navigating the endoscope within the patient. 
+By fine-tuning a pretrained foundation model, significant advancements can be made compared to training from scratch.
+
+This report delves into the findings of the paper \emph{Surgical-DINO: Adapter Learning of Foundation Models for Depth Estimation in Endoscopic Surgery} by Cui et al.~\cite{Cui2024}. 
+The paper introduces a fine-tuning regimen for a computer vision foundation model, DINOv2, developed by Oquab et al.~\cite{Oquab2023}, specifically tailored for the task of Monocular Depth Estimation (MDE) in endoscopy. 
+Using the comparatively small dataset SCARED dataset~\cite{Allan2021} with $17\,607$ unique images, each accompanied by a corresponding ground truth depth map, this work highlights the potential of foundation models to accelerate the development of state-of-the-art techniques, even in domains with limited data availability.
+
+This report will first dive into Vision Transformer (ViTs) in Section~ref{sec:vision-transformers}, followed by a detailed explanation of the used foundation model DINOv2 in Section~\ref{sec:dino} after which the basics of depth estimation are layed out in Section~\ref{sec:depth-estimation} before the details of fine-tuning foundation models are explained in Section~\ref{sec:model-fine-tuning} before.
+\TS{polish the last sentence}

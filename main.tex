@@ -19,6 +19,9 @@
 \pgfplotsset{compat=1.17}
 \usetikzlibrary{positioning, shapes.multipart, arrows.meta, calc}
 
+% Comments for Text
+\usepackage{xcolor}
+\newcommand\TS[1]{\textcolor{red}{[\textbf{WIP}:\emph{#1}]}}
 
 %\usepackage{adjustbox} %rotate environemnts like figures or tables
 %\usepackage{makecell} %line break in tables
@@ -205,16 +208,16 @@
 \input{chapters/03_surgicaldino}
 \chapter{Discussion}
 \input{chapters/04_discussion}
-\chapter{Conclusion}
-\input{chapters/06_conclusion}
-\appendix
-
-\chapter{Code Tools}
-\label{app:codetools}
+% \chapter{Conclusion}
+% \input{chapters/06_conclusion}
 \addcontentsline{toc}{chapter}{Bibliography}
 \clearpage
 \pagestyle{plain}
 \printbibliography
+
+\appendix
+\chapter{Architecture Comparison Transformer and Vision Transformer}\label{app:CompViT}
+\input{chapters/appendix/comparison_transformer_vit}
 
 \newpage
 %\input{chapters/eidesstattlicherErklärung}
