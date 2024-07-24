@@ -1,16 +1,37 @@
 \section{Surgical-Dino}
+
+\subsection*{Motivation}
 \TS{Information about the motivation of Dino}
-Surgical Dino as introduced by Cui et al.~\cite{Cui2024} adapts the DinoV2 architecture as introduced in Section~\ref{sec:dino} to the task of monocular depth estimation to use for endoscopy.
-Endoscopy is a medical procedure where a camera is inserted into the body to visualize the interior of organs or cavities for diagnostic or surgical purposes.
-While there are endoscopy instruments available using stereo cameras for depth estimation, these are often bulky and expensive. 
-Hence the desire to create appropriate depth estimations using only a singel, monocular camera using ML.
-DinoV2 was choosen as starting point as it was the most recent foundation model and already achieved promising results in several computer vision tasks including depth estimation.
+Surgical Dino as introduced by Cui et al.~\cite{Cui2024} addresses the challange of monocular depth estimation in endoscopy using a fine-tuned version of the DinoV2 ViT foundation model, which is one of the biggest foundation models available to the public.
+Most current works using foundation models in the surgical domain deal with segmentation and object detection tasks.
+There, however, is also a need for using foundation models for accurate depth estimation as it is a crucial step to improve technologies in the field of robotic surgery and has the potential of enhacing 3d reconstruction of interal organs and surgical navigation.
+While there are endoscopy instruments available using stereo cameras for depth estimation, these are only available on the most advanced surgical robots such as the Davinci Xi, which are not available in most hospitals.
+Hence the desire to create appropriate depth estimations using only a singel image using ML algorithms such as CNNs and more recently transformer.
+While vision foundation models could already proof their value in more natural domains where there are large datasets available, but the authors of Surgical-Dino figured that the unadapted foundation models experience a significant drop in performance when applied to the surgical domain, which makes sense as this kind of data usually is not inculded in the training data of the foundation models as it often is confidential and not availbale at the scale needed for training such models from scratch.
+DinoV2 was choosen as the basis of Surgical-Dino by the authors as it was the most recent foundation model available and already achieved promising results in several computer vision tasks including depth estimation in more general settings such as autonomous driving or general segmentation.
 
-\TS{Information about the motivation of the authors}
-To do this the authors develope a pipeline to adapt the smallest pretrained DinoV2 Encoder \emph{DINOv2-S} with 12 Transformer Blocks and each multi-head attention heaving 6 hedas,  and train a new depth prediction head to transfer the Transformer outputs to a depth map.
-The Surgical-Dino Model uses this \emph{DINOv2-S} model, freezes its weighst and adds LORA matrices to the Attention Heads and adds a untrained linear layer following the Encoder to predict the depth map.
-Instead of fine tuning the model by updating all weights the authors applied the sugested method LORA as introduced in Section~\ref{sec:model-fine-tuning} as it reduces the number of parameters to be trained significantly.
+\subsection*{Implementation}
+\TS{Information about the technicalities of the model}
+To adapt DinoV2, which was introduced in~\ref{fig:dinov1}, for depth estimation in the surgical domain the authors develope a pipeline to finetune the smallest of the available pretrained DinoV2 Encoders called \emph{DINOv2-S} with 12 transformer blocks and a token vector size of $d_{\text{model}}=784$ each block containing multi-head attention blocks with 6 heads and additionally add a new depth prediction head to transfer the Transformer Block outputs, also known as \emph{Embedding Matrix} or \emph{Feature Map} into a grayscale depth map with pixel values between $0$ to $255$.
+For the finetuning all weights of the \emph{DINOv2-S} model were frozen and extented by adding trainable LoRa side layers as introduced in Section~\ref{sec:model-fine-tuning} to all Attention Heads' query and value matrices inspired by the findings of Zhang et al.~\cite{Zhang2021}. 
+Using LoRa side layers was decided on by the authors as they allow to fine tune the model with very limited computational ressources and small datasets, do not increase the inference time later on and are easy to implement. 
+In case of this work a single highend consumer grade graphics card was enough to train the model in a reasonable amount of time.
 
+Following the transformer encoder blocks a depth decoder head is appended which converts not only the \emph{Feature Maps} of the last transformer block, but the outputs of every third block. 
+Before the decoder head the \emph{Feature Maps}  are unflattend 
+
+Following the transformer encoder blocks a depth decoder head is appended which converts not only the \emph{Feature Maps} of the last transformer block, but the outputs of every third block. 
+Before the decoder head, each \emph{token vector} of inside the \emph{Feature Maps} gets unflattened and upsampled to $f\times$ the original patch resolution using bilinear interpolation to increase the resolution of the depth map.
+These transformed features are then concatenated along the channel dimension to form Each Feature Matrix then is reassambled and the different Features Maps are concatenated along the channel dimension.
+Finally, the depth decoder utilizes a $1\times1$ convolutional layer to predict the depth of each pixel individually, treating depth prediction as a classification problem by dividing the depth range into discrete bins.
+
+% The depth map the authors decided to treat this problem as a pixel classification problem and add a single convolutional layer following the transformer blocks to predict the depth of each pixel.
+
+First the outputs not just of the last transformer block but also of the transformer blocks 3, 6 and 9 are processed by the depth prediction head.
+Before that the transformer block outputs are unflattend, to have the same shape as the input patches, bi-linearly upsampled 4x to increase the resolution for the depth map. At the end the Depth map is downsampled again which improves the overall quality of the depth map.
+
+
+\subsection*{Training}
 \TS{Results of the Paper}
 
 The first step for creating Surgical-DINO is to fine-tune the DinoV2 Encoder following the DinoV2 pre-training procedure except with the encoder weights frozen
